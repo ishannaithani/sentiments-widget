@@ -1,0 +1,34 @@
+.app-wrapper {
+  height: 100vh;
+  width: 100vw;
+  .app-content {
+    background: $app-background-base;
+    background: linear-gradient(180deg, $app-background-base 0%, $app-background-base 16%, lighten($app-background-base, 10) 100%);
+    @include for-phone-only {
+      width: $app-wrapper-width-xs;
+      height: $app-wrapper-height-xs;
+    }
+
+    @include for-tablet-portrait-up {
+      width: $app-wrapper-width-md;
+      height: $app-wrapper-height-md;
+    }
+
+    @include for-tablet-landscape-up {
+      width: $app-wrapper-width-md;
+      height: $app-wrapper-height-md;
+    }
+
+    @include for-desktop-up {
+      width: $app-wrapper-width-lg;
+      height: $app-wrapper-height-lg;
+    }
+
+    @include for-big-desktop-up {
+      width: $app-wrapper-width-lg;
+      height: $app-wrapper-height-lg;
+    }    
+  }
+}
+
+
