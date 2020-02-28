@@ -10,6 +10,10 @@
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  font-size: 16px;  // Magic:
+  @media (max-width: 1000px) {
+    font-size: calc(12px + .4vw);
+  }
 }
 
 /**

@@ -1,0 +1,37 @@
+.emoji-wrapper {
+  border-style: none;
+  text-align: left;
+  padding: 0;
+  background: none;
+  > .emoji {
+    position: relative;
+    width: $emoji-height-width;
+    height: $emoji-height-width;
+
+    > .emoji-content {
+      position: absolute;
+      top: -3px;
+    }
+  }
+}
+
+.emoji-appear {
+  opacity: 0;
+}
+.emoji-enter {
+  opacity: 0;
+}
+
+.emoji-enter-done { 
+  opacity:1;
+  transition: all 200ms ease-in-out;
+}
+
+.emoji-exit{
+  opacity: 1;
+}
+
+.emoji-exit-active{
+  opacity: 0;
+  transition: opacity 200ms;
+}
