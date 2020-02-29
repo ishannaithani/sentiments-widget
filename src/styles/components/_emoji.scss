@@ -5,33 +5,30 @@
   background: none;
   > .emoji {
     position: relative;
-    width: $emoji-height-width;
-    height: $emoji-height-width;
+    width: $emoji-height-width-default;
+    height: $emoji-height-width-default;
+
+    &-appear, &-enter {
+      opacity: 0;
+    }
+
+    &-enter-done {
+      opacity:1;
+      transition: all 200ms ease-in-out;
+    }
+
+    &-exit {
+      opacity: 1;
+    }
+
+    &-exit-active {
+      opacity: 0;
+      transition: opacity 200ms;
+    }
 
     > .emoji-content {
       position: absolute;
       top: -3px;
     }
   }
-}
-
-.emoji-appear {
-  opacity: 0;
-}
-.emoji-enter {
-  opacity: 0;
-}
-
-.emoji-enter-done { 
-  opacity:1;
-  transition: all 200ms ease-in-out;
-}
-
-.emoji-exit{
-  opacity: 1;
-}
-
-.emoji-exit-active{
-  opacity: 0;
-  transition: opacity 200ms;
 }

@@ -14,3 +14,14 @@
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) { @content; }
 }
+
+@mixin generate-emoji ($emoji-height-width) {
+  width: $emoji-height-width;
+  height: $emoji-height-width;
+  border-radius: 99px;
+  background: $emoji-bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}

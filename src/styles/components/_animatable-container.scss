@@ -1,29 +1,22 @@
 .animatable-container {
-  font-size: $emoji-height-width;
-  width: $emoji-height-width + 5;
-  height: $emoji-height-width + 5;
-  border-radius: 99px;
-  box-shadow: 0px 0px 0px 3px #000;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include generate-emoji($emoji-height-width-default);
+  font-size: 1.5rem; // Setting base relative to container for all child components
 
   &.container-animation-step-0 {
-    transition: width 0.35s ease-in-out;
-    width: $emoji-height-width + 5;    
+    transition: width $animation-step-2-duration ease-in-out;
+    width: $emoji-height-width-default;    
+    font-size: $emoji-height-width-default;
   }
 
   &.container-animation-step-1 {
-    transition: width 0.35s ease-in-out;
-    width: $emoji-height-width + 250;
-    
+    transition: width $animation-step-2-duration ease-in-out;
+    width: $emoji-height-width-default + 250;
   }
 
   &.container-animation-step-2 {
     width: 100%;
     height: 200px;
-    border-radius: 5px;
+    border-radius: $app-border-radius;
     background: #fff;
     box-shadow: none;
     transition: all 0.25s ease-in;

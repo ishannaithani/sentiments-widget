@@ -1,0 +1,76 @@
+.rating-scale.heading {
+  &-appear, &-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  &-enter-done {
+    opacity:1;
+    transform: translateY(0px);
+    transition: all 500ms ease-in-out;
+  }
+}
+
+.rating-scale.rating-selector {
+  &-appear, &-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  &-enter-done {
+    opacity:1;
+    transform: translateY(0px);
+    transition: all 1s ease-in-out;
+  }
+}
+
+.rating-scale.scale-selector {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 15px 0;
+
+  > li {
+    button.rating {
+      background: none;
+      border: $rating-scale-button-border;
+      border-right: none;
+      width: $rating-scale-button-width;
+      height: $rating-scale-button-height;
+      outline: none;
+      
+      &:hover {
+        background: $rating-scale-button-hover-bg;
+      }
+    } 
+
+    &:first-child {
+      button.rating {
+        border-top-left-radius: $app-border-radius;
+        border-bottom-left-radius: $app-border-radius;
+      }
+      
+    }
+
+    &:last-child {
+      button.rating {
+        border-right: $rating-scale-button-border;
+        border-top-right-radius: $app-border-radius;
+        border-bottom-right-radius: $app-border-radius;
+      }
+    }
+  }
+}
+
+.rating-scale-after-rating {
+  display: flex;
+  align-items: center;
+  .emoji-wrapper-thankyou {
+    @include generate-emoji($emoji-height-width-default);
+    margin-right: 15px;
+    .emoji-content {
+      font-size: $emoji-height-width-default;
+    }
+  }
+}

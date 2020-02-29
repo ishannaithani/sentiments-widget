@@ -2,23 +2,21 @@
   background: none;
   border-style: none;
   color: #fff;
-  font-size: 1.5rem;
   font-weight: bold;
-  opacity: 0;
   outline: none;
 }
 
-.help-us-improve-appear {
-  opacity: 0;
-  transform: translateX(-20px);
-}
-.help-us-improve-enter {
-  opacity: 0;
-  transform: translateX(-20px);
+.help-us-improve {
+  &-appear, &-enter {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  &-enter-done {
+    opacity:1;
+    transform: translateX(0px);
+    transition: all 500ms ease-in-out;
+  }
 }
 
-.help-us-improve-enter-done { 
-  opacity:1;
-  transform: translateX(0px);
-  transition: all 500ms ease-in-out;
-}
+
