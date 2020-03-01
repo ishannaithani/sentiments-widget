@@ -9,7 +9,7 @@ export const ScaleSelector = ({ maximumRating, onRatingReceived }) => {
       Array.from(Array(maximumRating), (v, k) => {
       const rating = k + 1;
       return <li key={rating}>
-        <button className={styles.buttonRating} onClick={onRatingReceived.bind(this, rating)}>
+        <button className={styles.buttonRating} onTouchStart={onRatingReceived.bind(this, rating)} onClick={onRatingReceived.bind(this, rating)}>
           { rating }
         </button>
       </li>

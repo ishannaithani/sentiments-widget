@@ -19,8 +19,12 @@ export const HelpUsImprove = () => {
 
   const { mounted } = state;
 
+  const onButtonClicked = () => {
+    dispatch({ type: ACTION_TYPES.UPDATE_ANIMATION_STEP, payload: ANIMATION_STEP_CLASSES.STEP_2 });
+  }
+
   return <CSSTransition in={mounted} classNames={{ enter: styles.buttonEnter, appear: styles.buttonAppear, enterDone: styles.buttonEnterDone }} timeout={{ appear: 100, enter: 200, exit: 200 }}>
-      <button className={styles.button} onClick={() => dispatch({ type: ACTION_TYPES.UPDATE_ANIMATION_STEP, payload: ANIMATION_STEP_CLASSES.STEP_2 })}>Help us improve</button>
+      <button className={styles.button} onClick={onButtonClicked} onTouchStart={onButtonClicked}>Help us improve</button>
   </CSSTransition>
 }
 

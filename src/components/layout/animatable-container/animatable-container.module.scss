@@ -29,7 +29,7 @@
   &.container-animation-step-3 {
     padding: 0;
     width: 85%;
-    height: 90%;
+    height: 80%;
     border-radius: $app-border-radius;
     background: #fff;
     box-shadow: none;
@@ -38,7 +38,7 @@
 
     @include for-phone-only {
       width: 100%;
-      height: 95%;
+      height: 90%;
       margin-bottom: 5%;
     }
   }

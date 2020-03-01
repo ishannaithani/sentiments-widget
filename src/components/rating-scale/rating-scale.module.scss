@@ -20,15 +20,24 @@
 
 
 .selector {
+  @media (hover: none) and (pointer: coarse) {
+    display: none;
+  }
   &_appear, &_enter {
     opacity: 0;
     transform: translateY(-20px);
+    @media (hover: none) and (pointer: coarse) {
+      display: none;
+    }
   }
 
   &_enter_done {
     opacity: 1;
     transform: translateY(0px);
     transition: all 1s ease-in-out;
+    @media (hover: none) and (pointer: coarse) {
+      display: block;
+    }
   }
 }
 

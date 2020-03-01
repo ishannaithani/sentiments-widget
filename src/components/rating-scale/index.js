@@ -12,9 +12,13 @@ import styles from './rating-scale.module.scss';
 import { ScaleSelector } from './scale-selector';
 import { CloseButton } from '../layout/close-button';
 
+const initialState = {
+  mounted: false, 
+  rating: null
+};
 
 export const RatingScale = (props) => {
-  const [state, setState] = useState({ mounted: false, rating: null });
+  const [state, setState] = useState(initialState);
   const { heading, showMessageAfterRating, messageTextAfterRating, ...rest } = props;
   const { dispatch } = useContext(AppContext);
 
@@ -22,7 +26,7 @@ export const RatingScale = (props) => {
     if (!state.mounted) {
       setState({ mounted: true });
     }
-  }, [])
+  }, []);
 
   const { mounted, rating } = state;
   const onRatingReceived = (ratedValue) => {
@@ -30,10 +34,9 @@ export const RatingScale = (props) => {
   }
 
   if (showMessageAfterRating && rating !== null && typeof rating === 'number') {
-
     setTimeout(() => {
       dispatch({ type: ACTION_TYPES.UPDATE_ANIMATION_STEP, payload: ANIMATION_STEP_CLASSES.STEP_3 })
-    }, FEEDBACK_TIMEOUT)
+    }, FEEDBACK_TIMEOUT);
 
     return <div className={styles.onRatingReceived}>
       <div className={styles.emojiWrapper}>
