@@ -7,13 +7,14 @@
   position: relative;
 
   &.container-animation-step-0 {
-    transition: width $animation-step-2-duration ease-in-out;
+    transition: all $animation-step-2-duration ease-in-out;
+    width: $emoji-height-width-default;    
     width: $emoji-height-width-default;    
     font-size: $emoji-height-width-default;
   }
 
   &.container-animation-step-1 {
-    transition: width $animation-step-2-duration ease-in-out;
+    transition: width $animation-step-2-duration ease-in-out, height $animation-step-2-duration ease-in-out;
     width: $emoji-height-width-default + 250;
   }
 

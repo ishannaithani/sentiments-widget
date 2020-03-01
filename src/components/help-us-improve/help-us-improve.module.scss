@@ -8,11 +8,12 @@
   font-weight: bold;
   outline: none;
   white-space: nowrap;
+  display: none;
 
   &Appear, &Enter {
     opacity: 0;
     transform: translateX(-20px);
-
+    display: block;
     /* smartphones, touchscreens */
     @media (hover: none) and (pointer: coarse) {
       display: none;
@@ -23,10 +24,7 @@
     opacity:1;
     transform: translateX(0px);
     transition: all 500ms ease-in-out;
-     /* smartphones, touchscreens */
-     @media (hover: none) and (pointer: coarse) {
-      display: block;
-    }
+    display: block;
   }
 }
 
