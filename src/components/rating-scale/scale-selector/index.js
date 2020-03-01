@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './scale-selector.module.scss';
 
 export const ScaleSelector = ({ maximumRating, onRatingReceived }) => {
+  
   return <ul className={styles.scaleSelector}>
     {
       Array.from(Array(maximumRating), (v, k) => {

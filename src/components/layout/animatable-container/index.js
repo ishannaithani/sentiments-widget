@@ -17,14 +17,12 @@ export const AnimatableContainer = ({ children, currentStep }) => {
   const onMouseLeave = currentStep === ANIMATION_STEP_CLASSES.STEP_1 ? boundMouseEvents.bind(this, ANIMATION_STEP_CLASSES.DEFAULT) : null;
 
   const onTouchStart = currentStep === ANIMATION_STEP_CLASSES.DEFAULT ? boundMouseEvents.bind(this, ANIMATION_STEP_CLASSES.STEP_1) : null;
-  const onTouchEnd = currentStep === ANIMATION_STEP_CLASSES.STEP_1 ? (e) => { e.preventDefault(); } : null;
 
   return <div 
     className={`${styles.root} ${styles[`${currentStep}`]}`}
     onMouseEnter={onMouseEnter} 
     onMouseLeave={onMouseLeave}
-    onTouchStart={onTouchStart}  
-    onTouchEnd={onTouchEnd}  
+    onTouchStart={onTouchStart}
     >
     {
       children

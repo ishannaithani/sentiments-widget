@@ -14,10 +14,14 @@ export const Emoji = () => {
   }, [])
 
   const { mounted } = state;
+  const stopTouchPropagation = (e) => {
+    e.stopPropagation();
+    return false;
+  }
 
   return <CSSTransition in={mounted} classNames="emoji" timeout={200} unmountOnExit>
     <div className={styles.emojiWrapper}>
-      <div className={styles.emoji}>
+      <div className={styles.emoji} onTouchStart={stopTouchPropagation}>
         <span role="img" aria-label="Happy!" className={styles.emojiContent}></span>
       </div>    
     </div>
