@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
-import { ScaleSelector } from './scale-selector';
+import { AppContext } from '../../app.context';
+import { ACTION_TYPES } from '../../actions/app.actions';
 import { Emoji  } from '../emoji/index';
+import { ANIMATION_STEP_CLASSES, FEEDBACK_TIMEOUT } from '../../enums';
 
 import styles from './rating-scale.module.scss';
+
+import { ScaleSelector } from './scale-selector';
+import { CloseButton } from '../layout/close-button';
+
 
 export const RatingScale = (props) => {
   const [state, setState] = useState({ mounted: false, rating: null });
   const { heading, showMessageAfterRating, messageTextAfterRating, ...rest } = props;
+  const { dispatch } = useContext(AppContext);
 
   useEffect(() => {
     if (!state.mounted) {
@@ -25,8 +32,8 @@ export const RatingScale = (props) => {
   if (showMessageAfterRating && rating !== null && typeof rating === 'number') {
 
     setTimeout(() => {
-      // Dispatch nex step
-    }, 4000)
+      dispatch({ type: ACTION_TYPES.UPDATE_ANIMATION_STEP, payload: ANIMATION_STEP_CLASSES.STEP_3 })
+    }, FEEDBACK_TIMEOUT)
 
     return <div className={styles.onRatingReceived}>
       <div className={styles.emojiWrapper}>
@@ -37,6 +44,7 @@ export const RatingScale = (props) => {
   }
 
   return <div>
+      <CloseButton transitionTo={ANIMATION_STEP_CLASSES.DEFAULT} />
       <CSSTransition in={mounted} classNames={{ appear: styles.heading_appear, enter: styles.heading_enter, enterDone: styles.heading_enter_done }} timeout={450} unmountOnExit>
         <h4 className={styles.headingText}>{heading}</h4>
       </CSSTransition>
@@ -48,7 +56,7 @@ export const RatingScale = (props) => {
 
 RatingScale.propTypes = {
   heading: PropTypes.string,
-  showMessageAfterRating: PropTypes.bool
+  showMessageAfterRating: PropTypes.bool,
 }
 
 RatingScale.defaultProps = {

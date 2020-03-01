@@ -8,6 +8,8 @@ import { ANIMATION_STEP_CLASSES } from './enums';
 import { Emoji } from './components/emoji';
 import { HelpUsImprove } from './components/help-us-improve';
 import { RatingScale } from './components/rating-scale';
+import { FeedbackForm} from './components/feedback-form';
+import { ThankYouCard } from './components/thank-you-card';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -17,6 +19,8 @@ function App() {
   switch(currentStep) {
     case ANIMATION_STEP_CLASSES.STEP_1: ComponentToRender = HelpUsImprove; break;
     case ANIMATION_STEP_CLASSES.STEP_2: ComponentToRender = RatingScale; break;
+    case ANIMATION_STEP_CLASSES.STEP_3: ComponentToRender = FeedbackForm; break;
+    case ANIMATION_STEP_CLASSES.STEP_4: ComponentToRender = ThankYouCard; break;
 
     default: ComponentToRender = Emoji;
   }

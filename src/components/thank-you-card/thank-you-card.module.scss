@@ -1,0 +1,12 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  h4, p { margin: 0; }
+
+  .heading {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+}
