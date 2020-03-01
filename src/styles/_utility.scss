@@ -5,8 +5,20 @@
   display: flex;
 }
 
+.flex-direction-row {
+  flex-direction: row;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
 .justify-content-center {
   justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
 }
 
 .align-items-center {
@@ -15,6 +27,10 @@
 
 .align-items-end {
   align-items: flex-end;
+}
+
+.full-width {
+  width: 100%;
 }
 
 .margin-bottom-0 {

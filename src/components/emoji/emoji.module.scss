@@ -1,4 +1,6 @@
-.emoji-wrapper {
+@import '../../styles/variables';
+
+.emojiWrapper {
   border-style: none;
   text-align: left;
   padding: 0;
@@ -26,7 +28,7 @@
       transition: opacity 200ms;
     }
 
-    > .emoji-content {
+    > .emojiContent {
       position: absolute;
       top: -3px;
     }

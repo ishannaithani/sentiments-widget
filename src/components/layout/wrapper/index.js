@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './wrapper.module.scss';
 
 export const AppWrapper = ({ children }) => {
-  return <div className="app-wrapper d-flex justify-content-center align-items-center">
-    <div className="app-content d-flex align-items-end">
+  return <div className={styles.appWrapper}>
+    <div className={styles.appContent}>
       {
         children
       }

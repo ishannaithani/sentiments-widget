@@ -1,15 +1,13 @@
 import React, { useReducer } from 'react';
 import { reducer, initialState } from './reducers/app.reducer';
 import { AppContext } from './app.context';
+import './App.module.scss';
 import { AppWrapper } from './components/layout/wrapper';
 import { AnimatableContainer } from './components/layout/animatable-container';
 import { ANIMATION_STEP_CLASSES } from './enums';
-
 import { Emoji } from './components/emoji';
 import { HelpUsImprove } from './components/help-us-improve';
 import { RatingScale } from './components/rating-scale';
-
-import './styles/app.scss';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);

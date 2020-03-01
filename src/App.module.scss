@@ -1,0 +1,8 @@
+@import './styles/normalize';
+@import './styles/variables';
+
+:global {
+  html, body {
+    color: $app-font-color;
+  }
+}

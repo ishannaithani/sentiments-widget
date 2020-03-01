@@ -3,6 +3,8 @@ import { AppContext } from '../../../app.context';
 import { ACTION_TYPES } from '../../../actions/app.actions';
 import { ANIMATION_STEP_CLASSES } from '../../../enums';
 
+import styles from './animatable-container.module.scss';
+
 export const AnimatableContainer = ({ children, currentStep }) => {
   const { dispatch } = useContext(AppContext);
   const triggerContainerAnimation = (nextClassName) => {
@@ -13,7 +15,7 @@ export const AnimatableContainer = ({ children, currentStep }) => {
   const onMouseLeave = currentStep === ANIMATION_STEP_CLASSES.STEP_1 ? triggerContainerAnimation.bind(this, ANIMATION_STEP_CLASSES.DEFAULT) : null;
 
   return <div 
-    className={`animatable-container ${currentStep}`}
+    className={`${styles.root} ${styles[`${currentStep}`]}`}
     onMouseEnter={onMouseEnter} 
     onMouseLeave={onMouseLeave}    
     >

@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './scale-selector.module.scss';
+
 export const ScaleSelector = ({ maximumRating, onRatingReceived }) => {
-  return <ul className="scale-selector">
+  return <ul className={styles.scaleSelector}>
     {
       Array.from(Array(maximumRating), (v, k) => {
       const rating = k + 1;
       return <li key={rating}>
-        <button className='rating' onClick={onRatingReceived.bind(this, rating)}>
+        <button className={styles.buttonRating} onClick={onRatingReceived.bind(this, rating)}>
           { rating }
         </button>
       </li>

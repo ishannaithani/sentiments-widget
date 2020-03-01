@@ -1,4 +1,7 @@
-.animatable-container {
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.root {
   @include generate-emoji($emoji-height-width-default);
   font-size: 1.5rem; // Setting base relative to container for all child components
 

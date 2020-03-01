@@ -1,22 +1,19 @@
-.help-us-improve-button {
+.button {
   background: none;
   border-style: none;
   color: #fff;
   font-weight: bold;
   outline: none;
-}
 
-.help-us-improve {
-  &-appear, &-enter {
+  &Appear, &Enter {
     opacity: 0;
     transform: translateX(-20px);
   }
 
-  &-enter-done {
+  &EnterDone {
     opacity:1;
     transform: translateX(0px);
     transition: all 500ms ease-in-out;
   }
 }
-
 
