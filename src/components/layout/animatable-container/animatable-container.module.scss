@@ -43,6 +43,18 @@
       margin-bottom: 5%;
     }
   }
+
+  @include for-phone-only {
+    margin: 20px;
+  }
+
+  @include for-tablet-portrait-up {
+    margin: 20px;
+  }
+
+  @include for-tablet-landscape-up {
+    margin: 20px;
+  }
 }
 
 

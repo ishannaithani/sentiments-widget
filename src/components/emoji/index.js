@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import styles from './emoji.module.scss';
+import svg from './smile.svg';
 
 export const Emoji = () => {
   const [state, setState] = useState({ mounted: false });
@@ -17,7 +18,7 @@ export const Emoji = () => {
   return <CSSTransition in={mounted} classNames="emoji" timeout={200} unmountOnExit>
     <div className={styles.emojiWrapper}>
       <div className={styles.emoji}>
-        <span role="img" aria-label="Happy!" className={styles.emojiContent}>&#128578;</span>
+        <span role="img" aria-label="Happy!" className={styles.emojiContent}></span>
       </div>    
     </div>
   </CSSTransition>
