@@ -21,7 +21,7 @@ Each component is `isolated` with its own `scoped styles` and `*.spec.js` file.<
 Given more time, I would have liked to achieved the below - 
 1. Web Accessibility (e.g. keyboard and tags for screen-readers)
 2. Theming
-3. Better documenation or JSDoc
+3. Better documentation or JSDoc
 
 Components
 ----------
