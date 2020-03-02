@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import PropTypes from 'prop-types';
 
 import styles from './emoji.module.scss';
-import svg from './smile.svg';
+import defaultSVGUrl from './smile.svg';
 
-export const Emoji = () => {
+export const Emoji = ({ emojiSVGUrl }) => {
   const [state, setState] = useState({ mounted: false });
 
   useEffect(() => {
@@ -21,10 +22,18 @@ export const Emoji = () => {
 
   return <CSSTransition in={mounted} classNames="emoji" timeout={200} unmountOnExit>
     <div className={styles.emojiWrapper}>
-      <div className={styles.emoji} onTouchStart={stopTouchPropagation}>
+      <div data-testid="emoji-svg-url" style={{ backgroundImage: `url(${emojiSVGUrl})` }} className={styles.emoji} onTouchStart={stopTouchPropagation}>
         <span role="img" aria-label="Happy!" className={styles.emojiContent}></span>
       </div>    
     </div>
   </CSSTransition>
+}
+
+Emoji.propTypes = {
+  emojiSVGUrl: PropTypes.string.isRequired
+}
+
+Emoji.defaultProps = {
+  emojiSVGUrl: defaultSVGUrl
 }
 

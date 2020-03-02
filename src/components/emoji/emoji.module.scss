@@ -9,8 +9,6 @@
     position: relative;
     width: $emoji-height-width-default;
     height: $emoji-height-width-default;
-    background-image: url('./smile.svg');
-
     &-appear, &-enter {
       opacity: 0;
     }
