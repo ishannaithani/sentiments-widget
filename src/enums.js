@@ -8,3 +8,4 @@ export const ANIMATION_STEP_CLASSES = {
   STEP_4: `${containerAnimationClassPrefix}-4`
 }
 export const FEEDBACK_TIMEOUT = 2000
+export const THANKYOU_TIMEOUT = 3500
