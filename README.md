@@ -25,7 +25,7 @@ Given more time, I would have liked to achieved the below -
 3. Better documentation or JSDoc
 
 ### Component and State Diagram
-![enter image description here](https://i.ibb.co/qmg2PYR/Screenshot-2020-03-02-at-7-45-54-PM.png)
+![enter image description here](https://i.ibb.co/DzmrZcB/Screenshot-2020-03-02-at-7-49-23-PM.png)
 
 Components
 ----------
