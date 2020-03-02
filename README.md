@@ -8,7 +8,7 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ### `npm run test`
 6 Test suits and 27 test cases
-
+Browsers tested: MacOS Chrome, MacOS Firefox, Safari, Android Chrome
   
 
 ### `npm run build`
