@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '@testing-library/jest-dom/extend-expect';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { RatingScale } from './index';
 import { AppContext } from '../../app.context';
 
 const mockProvider = {
   state: 'MOCK_VALUE',
   dispatch: jest.mock()
-}
+};
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

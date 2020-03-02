@@ -19,6 +19,7 @@ export const AnimatableContainer = ({ children, currentStep }) => {
   const onTouchStart = currentStep === ANIMATION_STEP_CLASSES.DEFAULT ? boundMouseEvents.bind(this, ANIMATION_STEP_CLASSES.STEP_1) : null;
 
   return <div 
+    data-test-id="animatable-container-root"
     className={`${styles.root} ${styles[`${currentStep}`]}`}
     onMouseEnter={onMouseEnter} 
     onMouseLeave={onMouseLeave}

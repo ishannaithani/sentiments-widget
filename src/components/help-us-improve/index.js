@@ -7,7 +7,7 @@ import { ACTION_TYPES } from '../../actions/app.actions';
 import { ANIMATION_STEP_CLASSES } from '../../enums';
 import styles from './help-us-improve.module.scss';
 
-export const HelpUsImprove = () => {
+export const HelpUsImprove = ({ text }) => {
   const [state, setState] = useState({ mounted: false });
   const { dispatch } = useContext(AppContext);
 
@@ -24,10 +24,14 @@ export const HelpUsImprove = () => {
   }
 
   return <CSSTransition in={mounted} classNames={{ enter: styles.buttonEnter, appear: styles.buttonAppear, enterDone: styles.buttonEnterDone }} timeout={{ appear: 100, enter: 200, exit: 200 }}>
-      <button className={styles.button} onClick={onButtonClicked} onTouchStart={onButtonClicked}>Help us improve</button>
+      <button data-testid="button-text" className={styles.button} onClick={onButtonClicked} onTouchStart={onButtonClicked}>{text}</button>
   </CSSTransition>
 }
 
 HelpUsImprove.propTypes = {
-  triggerContainerAnimation: PropTypes.func
+  text: PropTypes.string.isRequired
+}
+
+HelpUsImprove.defaultProps = {
+  text: 'Help us improve'
 }
