@@ -18,7 +18,7 @@ Builds the app for production to the `build` folder
 Components
 ----------
 
-**src/App.js**
+**src/App.js[https://github.com/ishannaithani/sentiments-widget/edit/master/src/App.js]**
 
 ### SentimentsWidget (Main exportable)
 
