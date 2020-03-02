@@ -1,68 +1,144 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sentiments Widget
 
-## Available Scripts
+Built with `ReactJS`.
 
-In the project directory, you can run:
+Please pull the code and run the below commands - 
+### `npm start`
+Open [http://localhost:3000](http://localhost:3000)   
 
-### `yarn start`
+### `npm run test`
+6 Test suits and 27 test cases
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### `npm run build`
+Builds the app for production to the `build` folder
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Components
+----------
 
-### `yarn build`
+**src/App.js**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### SentimentsWidget (Main exportable)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+emojiSVGUrl|string|no|null|
+step1ButtonText|string|no|null|
+ratingScreenOptions|shape|no|&lt;See the source code&gt;|
+feedbackFormOptions|shape|no|&lt;See the source code&gt;|
+finalThankYouCard|shape|no|&lt;See the source code&gt;|
+-----
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Child Components of `SentimentsWidget`
+**src/components/emoji/index.js**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 1. Emoji
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+emojiSVGUrl|string|no|defaultSVGUrl|
+-----
+**src/components/feedback-form/index.js**
 
-### Code Splitting
+### 1. FeedbackForm
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+formHeadingText|string|no|&lt;See the source code&gt;|
+questionExperience|string|no|&lt;See the source code&gt;|
+placeholderExperience|string|no|&lt;See the source code&gt;|
+questionImprovement|string|no|&lt;See the source code&gt;|
+placeholderImprovement|string|no|&lt;See the source code&gt;|
+questionEmail|string|no|&lt;See the source code&gt;|
+placeholderEmail|string|no|&lt;See the source code&gt;|
+sumbitButtonText|string|no|&lt;See the source code&gt;|
+-----
+**src/components/help-us-improve/index.js**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### 1. HelpUsImprove
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+text|string|no|&lt;See the source code&gt;|
+-----
+**src/components/layout/close-button/index.js**
 
-### `yarn build` fails to minify
+### 1. CloseButton
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+transitionTo|string|no|ANIMATION_STEP_CLASSES.DEFAULT|
+positionTop|number|no|0|
+positionRight|number|no|0|
+color|string|no|&lt;See the source code&gt;|
+-----
+**src/components/rating-scale/index.js**
+
+### 1. RatingScale
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+heading|string|no|&lt;See the source code&gt;|
+showMessageAfterRating|bool|no|true|
+maximumRating|number|no|6|
+ratingLowText|string|no|&lt;See the source code&gt;|
+ratingHighText|string|no|&lt;See the source code&gt;|
+messageTextAfterRating||no|&lt;See the source code&gt;|
+-----
+**src/components/rating-scale/scale-selector/index.js**
+
+### 1. ScaleSelector
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+maximumRating|number|no|6|
+onRatingReceived|func|no|&lt;See the source code&gt;|
+ratingLowText|string|no|&lt;See the source code&gt;|
+ratingHighText|string|no|&lt;See the source code&gt;|
+-----
+**src/components/thank-you-card/index.js**
+
+### 1. ThankYouCard
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+heading|string|no|&lt;See the source code&gt;|
+subtitle|string|no|&lt;See the source code&gt;|
+-----
+
+<sub>This document was generated by the <a href="https://github.com/marborkowski/react-doc-generator" target="_blank">**React DOC Generator v1.2.5**</a>.</sub>
+
+
+  
+
+  
+
+
+  
+
