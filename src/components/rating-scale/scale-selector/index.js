@@ -6,12 +6,12 @@ import styles from './scale-selector.module.scss';
 export const ScaleSelector = ({ maximumRating, onRatingReceived, ratingLowText, ratingHighText }) => {
   
   return <div className={styles.wrapper}>
-    <ul className={styles.scaleSelector}>
+    <ul className={styles.scaleSelector} data-testid="scale-selector-ul">
     {
       Array.from(Array(maximumRating), (v, k) => {
       const rating = k + 1;
-      return <li key={rating}>
-        <button className={styles.buttonRating} onTouchStart={onRatingReceived.bind(this, rating)} onClick={onRatingReceived.bind(this, rating)}>
+      return <li key={rating} data-testid={`rating-li-elem-${rating}`}>
+        <button data-testid={`rating-button-${rating}`} className={styles.buttonRating} onTouchStart={onRatingReceived.bind(this, rating)} onClick={onRatingReceived.bind(this, rating)}>
           { rating }
         </button>
       </li>

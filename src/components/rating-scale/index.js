@@ -42,14 +42,14 @@ export const RatingScale = (props) => {
       <div className={styles.emojiWrapper}>
         <Emoji />
       </div>
-      <h4>{messageTextAfterRating}</h4>
+      <h4 data-testid="message-text-after-rating">{messageTextAfterRating}</h4>
     </div>
   }
 
   return <div>
       <CloseButton transitionTo={ANIMATION_STEP_CLASSES.DEFAULT} />
       <CSSTransition in={mounted} classNames={{ appear: styles.heading_appear, enter: styles.heading_enter, enterDone: styles.heading_enter_done }} timeout={450} unmountOnExit>
-        <h4 className={styles.headingText}>{heading}</h4>
+        <h4 data-testid="heading" className={styles.headingText}>{heading}</h4>
       </CSSTransition>
       <CSSTransition in={mounted} classNames={{ appear: styles.selector_appear, enter: styles.selector_enter, enterDone: styles.selector_enter_done}} timeout={{ appear: 200, enter: 800 }} unmountOnExit>
         <ScaleSelector {...rest} onRatingReceived={onRatingReceived} />
@@ -60,11 +60,13 @@ export const RatingScale = (props) => {
 RatingScale.propTypes = {
   heading: PropTypes.string,
   showMessageAfterRating: PropTypes.bool,
+  maximumRating: PropTypes.number
 }
 
 RatingScale.defaultProps = {
   heading: 'Rate your experience',
   showMessageAfterRating: true,
-  messageTextAfterRating: 'Thank you! Tell us more.'
+  messageTextAfterRating: 'Thank you! Tell us more.',
+  maximumRating: 6
 }
 
