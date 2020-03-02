@@ -1,6 +1,6 @@
 ## Sentiments Widget
 
-Built with `ReactJS`.
+Built with `ReactJS`. Demo at https://sentiments-widget.azurewebsites.net/
 
 Please pull the code and run the below commands - 
 ### `npm start`
