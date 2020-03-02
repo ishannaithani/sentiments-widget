@@ -1,3 +1,4 @@
+
 ## Sentiments Widget
 
 Built with `ReactJS`. Demo at https://sentiments-widget.azurewebsites.net/
@@ -22,6 +23,9 @@ Given more time, I would have liked to achieved the below -
 1. Web Accessibility (e.g. keyboard and tags for screen-readers)
 2. Theming
 3. Better documentation or JSDoc
+
+### Component and State Diagram
+![enter image description here](https://i.ibb.co/qmg2PYR/Screenshot-2020-03-02-at-7-45-54-PM.png)
 
 Components
 ----------
