@@ -60,13 +60,17 @@ export const RatingScale = (props) => {
 RatingScale.propTypes = {
   heading: PropTypes.string,
   showMessageAfterRating: PropTypes.bool,
-  maximumRating: PropTypes.number
+  maximumRating: PropTypes.number,
+  ratingLowText: PropTypes.string,
+  ratingHighText: PropTypes.string
 }
 
 RatingScale.defaultProps = {
   heading: 'Rate your experience',
   showMessageAfterRating: true,
   messageTextAfterRating: 'Thank you! Tell us more.',
-  maximumRating: 6
+  maximumRating: 6,
+  ratingLowText: 'Not Satisfied',
+  ratingHighText: 'Very Satisfied'
 }
 

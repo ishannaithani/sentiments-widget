@@ -3,7 +3,7 @@ import { ANIMATION_STEP_CLASSES } from '../enums';
 
 export const initialState = {
   animatableContainer: {
-    currentStep: ANIMATION_STEP_CLASSES.STEP_3
+    currentStep: ANIMATION_STEP_CLASSES.DEFAULT
   }
 };
 
