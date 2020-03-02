@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 import styles from './scale-selector.module.scss';
 
-export const ScaleSelector = ({ maximumRating, onRatingReceived }) => {
+export const ScaleSelector = ({ maximumRating, onRatingReceived, ratingLowText, ratingHighText }) => {
   
-  return <ul className={styles.scaleSelector}>
+  return <div className={styles.wrapper}>
+    <ul className={styles.scaleSelector}>
     {
       Array.from(Array(maximumRating), (v, k) => {
       const rating = k + 1;
@@ -16,15 +17,28 @@ export const ScaleSelector = ({ maximumRating, onRatingReceived }) => {
       </li>
       })
     }
-  </ul>
+    </ul>
+    <div className={styles.ratingText}>
+      <small className={styles.text}>
+        { ratingLowText }
+      </small>
+      <small className={styles.text}>
+        { ratingHighText }
+      </small>
+    </div>
+  </div>
 }
 
 ScaleSelector.propTypes = {
   maximumRating: PropTypes.number,
-  onRatingReceived: PropTypes.func.isRequired
+  onRatingReceived: PropTypes.func.isRequired,
+  ratingLowText: PropTypes.string,
+  ratingHighText: PropTypes.string
 }
 
 ScaleSelector.defaultProps = {
   maximumRating: 6,
-  onRatingReceived: () => {}
+  onRatingReceived: () => {},
+  ratingLowText: 'Not Satisfied',
+  ratingHighText: 'Very Satisfied'
 }
