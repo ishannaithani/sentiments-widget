@@ -10,7 +10,6 @@ export const AnimatableContainer = ({ children, currentStep }) => {
   const { dispatch } = useContext(AppContext);
 
   const boundMouseEvents = (payload, ev) => {
-    console.log("ISHAN::::", payload)
     dispatch({ type: ACTION_TYPES.UPDATE_ANIMATION_STEP, payload });
     return false;
   }
