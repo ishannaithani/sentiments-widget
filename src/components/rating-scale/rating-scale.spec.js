@@ -5,10 +5,17 @@ import { render, fireEvent } from '@testing-library/react';
 import { RatingScale } from './index';
 import { AppContext } from '../../app.context';
 
-const mockProvider = {
-  state: 'MOCK_VALUE',
-  dispatch: jest.mock()
-};
+let mockProvider = null;
+beforeEach(() => {
+ mockProvider = {
+    state: 'MOCK_VALUE',
+    dispatch: jest.fn()
+  }
+})
+
+afterEach(() => {
+  mockProvider = null
+});
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

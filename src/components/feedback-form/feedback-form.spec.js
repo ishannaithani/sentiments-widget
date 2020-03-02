@@ -7,10 +7,17 @@ import { AppContext } from '../../app.context';
 import { ANIMATION_STEP_CLASSES }  from '../../enums';
 import { ACTION_TYPES }  from '../../actions/app.actions';
 
-const mockProvider = {
-  state: 'MOCK_VALUE',
-  dispatch: jest.fn()
-}
+let mockProvider = null;
+beforeEach(() => {
+ mockProvider = {
+    state: 'MOCK_VALUE',
+    dispatch: jest.fn()
+  }
+})
+
+afterEach(() => {
+  mockProvider = null
+});
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
