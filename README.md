@@ -14,6 +14,13 @@ Browsers tested: MacOS Chrome, MacOS Firefox, Safari, Android Chrome
 ### `npm run build`
 Builds the app for production to the `build` folder
 
+### A brief note
+This widget is built-up of 5 components. The root component is the `SentimentsWidget`.<br />
+Inside src/layout/animatable-container, is a higher-order-component who orchestrates the different states' of the widget and handles the animation.<br />
+Each component is `isolated` with its own `scoped styles` and `*.spec.js` file.<br />
+Given more time, I would have liked to achieved the below - 
+1. Web Accessibility (e.g. keyboard and tags for screen-readers)
+2. Theming
 
 Components
 ----------
